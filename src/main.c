@@ -6,10 +6,15 @@
 
 // Reset
 #define RESET "\e[0m"
+
 // Bold
 #define BWHITE "\e[1;37m"
 #define BBLACK "\e[1;30m"
-// 8-bit Mode
+
+#define RDGRAY_1 "\e[38;5;244m"
+#define RDGRAY_2 "\e[38;5;240m"
+
+// Theme Colors
 #define PGREEN "\e[38;5;34m"
 #define PPURPLE_1 "\e[38;5;140m"
 #define PPURPLE_2 "\e[38;5;98m"
@@ -17,8 +22,7 @@
 #define PORANGE "\e[38;5;172m"
 #define PRED "\e[38;5;131m"
 #define PYELLOW "\e[38;5;187m"
-#define RDGRAY_1 "\e[38;5;244m"
-#define RDGRAY_2 "\e[38;5;240m"
+
 // Main Color
 #define MCOLOR PPURPLE_1
 
@@ -37,13 +41,14 @@ void printMenuOption(const char *number, const char *text) {
 
 void displayMainMenu() {
   printf("What you wanna do?\n\n");
-  printMenuOption("1", "add_card");
-  printMenuOption("2", "remove_card");
-  printMenuOption("3", "add_topic");
-  printMenuOption("4", "remove_topic");
-  printMenuOption("5", "list");
-  printMenuOption("6", "themes");
-  printMenuOption("7", "help");
+  printMenuOption("1", "practice");
+  printMenuOption("2", "add_card");
+  printMenuOption("3", "remove_card");
+  printMenuOption("4", "add_topic");
+  printMenuOption("5", "remove_topic");
+  printMenuOption("6", "list");
+  printMenuOption("7", "themes");
+  printMenuOption("8", "help");
   printMenuOption("0", "quit");
 }
 
@@ -92,28 +97,39 @@ int main() {
 
   switch (choice) {
   case 0:
-    printf("You're leaving...\n");
+    printf(BWHITE "\nGoodbye!\n" RESET);
     break;
   case 1:
-    printf("Add a card...\n");
+    printf("I want to practice...\n");
+    // practice();
     break;
   case 2:
-    printf("Remove a card...\n");
+    printf("Add a card...\n");
+    // addCard();
     break;
   case 3:
-    printf("Add a new topic...\n");
+    printf("Remove a card...\n");
+    // removeCard();
     break;
   case 4:
-    printf("Remove a topic...\n");
+    printf("Add a new topic...\n");
+    // addTopic();
     break;
   case 5:
-    printf("I wanna see it all!\n");
+    printf("Remove a topic...\n");
+    // removeTopic();
     break;
   case 6:
-    printf("No color, no party! Choose a theme!\n");
+    printf("I wanna see it all!\n");
+    // list();
     break;
   case 7:
+    printf("No color, no party! Choose a theme!\n");
+    // chooseTheme();
+    break;
+  case 8:
     printf("I need help...\n");
+    // help();
     break;
   default:
     printf("No, we don't have that here.");
