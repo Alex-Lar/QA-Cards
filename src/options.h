@@ -1,7 +1,10 @@
-#ifndef ACTIONS_H
-#define ACTIONS_H
+#ifndef OPTIONS_H
+#define OPTIONS_H
 
-typedef void (*MenuAction)();
+typedef struct {
+  const char *name;
+  void (*action)();
+} MenuOption;
 
 void quit();
 

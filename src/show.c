@@ -6,16 +6,16 @@ void showOption(const char *number, const char *text) {
   printf(RDGRAY_1 "[" MCOLOR "%s" RDGRAY_1 "]" RESET " %s\n", number, text);
 }
 
-void showMainMenu(char **options, int size) {
+void showMainMenu(MenuOption menuOptions[], int size) {
   printf("What you wanna do?\n\n");
   char num_str[15];
 
   for (int i = 1; i < size; i++) {
     sprintf(num_str, "%d", i);
-    showOption(num_str, options[i]);
+    showOption(num_str, menuOptions[i].name);
   }
 
-  showOption("0", options[0]);
+  showOption("0", menuOptions[0].name);
 }
 
 void showWelcomeMessage(char *msg) {
