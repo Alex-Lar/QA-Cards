@@ -20,7 +20,7 @@ void showMainMenu(MenuOption menuOptions[], int size) {
 
 void showWelcomeMessage(char *msg) {
   int col = getTerminalColumns();
-  size_t size = strlen(msg) + 1; // I'm a wizard, we love numbers
+  size_t size = strlen(msg) + 1;
   char msgCentered[col];
   char dash = '-';
 
