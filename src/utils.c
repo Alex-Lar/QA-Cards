@@ -10,8 +10,7 @@ int getTerminalColumns() {
 }
 
 void alignCenter(char *input, char *output, int columns, size_t inputSize) {
-  int spacesQty =
-      (columns - (inputSize - 15)) / 2; // Number magic is happening here.
+  int spacesQty = (columns - (inputSize - 15)) / 2;
   const char space = ' ';
 
   int i;

@@ -3,21 +3,21 @@
 #include "show.h"
 #include <stdio.h>
 
-const MenuAction menuActions[] = {quit,       practice, addCard,
-                                  removeCard, addTopic, removeTopic,
-                                  list,       themes,   help};
-
 int main() {
+  extern MenuAction menuActions[];
+  extern char *MENU_OPTIONS[];
+  extern int NUMBER_OF_OPTIONS;
+
   int choice;
 
   showWelcomeMessage(MCOLOR "Card" RESET " CLI");
-  showMainMenu();
+
+  showMainMenu(MENU_OPTIONS, NUMBER_OF_OPTIONS);
 
   printf("\n" MCOLOR "Number: " RESET);
   scanf("%d", &choice);
 
-  if (choice >= 0 &&
-      choice <= (sizeof(menuActions) / sizeof(menuActions[0])) - 1) {
+  if (choice >= 0 && choice <= NUMBER_OF_OPTIONS - 1) {
     MenuAction action = menuActions[choice];
     action();
   } else {

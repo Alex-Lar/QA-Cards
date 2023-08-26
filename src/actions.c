@@ -2,6 +2,16 @@
 #include "colors.h"
 #include <stdio.h>
 
+const char *MENU_OPTIONS[] = {"quit",        "practice",  "add_card",
+                              "remove_card", "add_topic", "remove_topic",
+                              "list",        "themes",    "help"};
+
+const MenuAction menuActions[] = {quit,       practice, addCard,
+                                  removeCard, addTopic, removeTopic,
+                                  list,       themes,   help};
+
+const int NUMBER_OF_OPTIONS = sizeof(MENU_OPTIONS) / sizeof(MENU_OPTIONS[0]);
+
 void quit() { printf(BWHITE "\nGoodbye!\n" RESET); }
 
 void practice() { printf("I want to practice!\n"); }

@@ -4,7 +4,7 @@
 #include <string.h>
 
 void showOption(const char *number, const char *text);
-void showMainMenu();
+void showMainMenu(char **options, int size);
 void showWelcomeMessage(char *msg);
 
 #endif
